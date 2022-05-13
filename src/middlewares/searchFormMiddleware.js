@@ -55,13 +55,14 @@ const searchFormMiddleware = (store) => (next) => (action) => {
 
       store.dispatch(hideSearchEvents());
       store.dispatch(setLoadingEvents(true));
-      axios.get(`/search/${band.id}`, {
+      axios.get('/event', {
         params: {
           cityName: city,
           venueName: venue,
           countryId: country === null ? '' : country.id,
           year: year === null ? '' : year.id,
           p: 1,
+          artistId: band.id,
         },
       })
         .then((response) => {

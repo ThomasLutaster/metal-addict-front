@@ -24,13 +24,14 @@ const eventsMiddleware = (store) => (next) => (action) => {
       const { searchEvents } = store.getState().events;
 
       store.dispatch(setLoadingEvents(true));
-      axios.get(`/search/${band.id}`, {
+      axios.get('/event', {
         params: {
           cityName: city,
           venueName: venue,
           countryId: country === null ? '' : country.id,
           year: year === null ? '' : year.id,
           p: searchEvents.page + 1,
+          artistId: band.id,
         },
       })
         .then((response) => {

@@ -162,20 +162,22 @@ export const changeCityName = (cityName) => {
   switch (cityName) {
     case 'Ville-Lumière':
       return 'Paris';
+    case 'Lutece':
+      return 'Paris';
     default:
       return cityName;
   }
 };
 
 export const getAbsolutePicturePath = (path) => (
-  `http://ec2-3-80-87-102.compute-1.amazonaws.com/Share-O-Metal/public${path}`
+  `https://www.metaladdict.fr/${path}`
 );
 
 export const getAbsoluteAvatarPath = (path) => {
   if (path === null) {
     return avatar;
   }
-  return `http://ec2-3-80-87-102.compute-1.amazonaws.com/Share-O-Metal/public${path}`;
+  return `https://www.metaladdict.fr/${path}`;
 };
 
 export const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));

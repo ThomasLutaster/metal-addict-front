@@ -14,7 +14,7 @@ import './styles.scss';
 
 // == Composant
 const App = () => {
-  axios.defaults.baseURL = 'http://ec2-3-80-87-102.compute-1.amazonaws.com/Share-O-Metal/public/api';
+  axios.defaults.baseURL = 'https://www.metaladdict.fr/api/v1';
 
   const { pathname } = useLocation();
 
