@@ -48,8 +48,9 @@ const reviewMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveReviewPictures(response.data));
         })
         .catch((error) => {
-          console.log(error);
-          action.history.push('/erreur');
+          if (error.response.status === 404) {
+            action.history.push('/page_non_trouvee');
+          }
         })
         .finally(() => {
           store.dispatch(setLoadingPictures(false));
